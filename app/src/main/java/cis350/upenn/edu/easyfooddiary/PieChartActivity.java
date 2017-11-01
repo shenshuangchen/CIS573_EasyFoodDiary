@@ -57,11 +57,6 @@ public class PieChartActivity extends Activity {
                     } else {
                         info = new JSONArray(s);
                     }
-                    /*calories = (EditText) findViewById(R.id.calories);
-                    carbs = (EditText) findViewById(R.id.carbs);
-                    protein = (EditText) findViewById(R.id.protein);
-                    fat = (EditText) findViewById(R.id.fat);*/
-
                     calories = ((String) info.get(0));
 
                     carbs = ((String) info.get(1));
@@ -77,43 +72,12 @@ public class PieChartActivity extends Activity {
                     pieChart.setRotationEnabled(true);
 
                     pieChart.setUsePercentValues(true);
-                    //pieChart.setHoleColor(Color.BLUE);
-                    //pieChart.setCenterTextColor(Color.BLACK);
                     pieChart.setHoleRadius(25f);
                     pieChart.setTransparentCircleAlpha(0);
                     pieChart.setCenterText("Macro Goals Distribution");
                     pieChart.setCenterTextSize(10);
-                    //pieChart.setDrawEntryLabels(true);
-                    //pieChart.setEntryLabelTextSize(20);
-                    //More options just check out the documentation!
 
                     addDataSet();
-
-//                    pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
-//                        @Override
-//                        public void onValueSelected(Entry e, Highlight h) {
-//                            Log.d(TAG, "onValueSelected: Value select from chart.");
-//                            Log.d(TAG, "onValueSelected: " + e.toString());
-//                            Log.d(TAG, "onValueSelected: " + h.toString());
-//
-//                            int pos1 = e.toString().indexOf("(sum): ");
-//                            String percentage = e.toString().substring(pos1 + 3);
-//
-//                            for(int i = 0; i < yData.length; i++){
-//                                if(yData[i] == Float.parseFloat(percentage)){
-//                                    pos1 = i;
-//                                    break;
-//                                }
-//                            }
-//                            String macro = xData[pos1 + 1];
-//                            Toast.makeText(PieChartActivity.this, "Macro: " + macro + "\n" + "percantage: " + percentage + "%", Toast.LENGTH_LONG).show();
-//                        }
-//
-//                        @Override
-//                        public void onNothingSelected() {
-//
-//                        }
-//                    });
 
                 } catch (JSONException e) {
                     Toast.makeText(PieChartActivity.this, "Error1", Toast.LENGTH_SHORT).show();
